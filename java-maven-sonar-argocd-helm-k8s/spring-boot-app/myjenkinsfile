@@ -2,7 +2,7 @@ pipeline{
 agent{
 docker
     {
-	image 'abhishekf5/maven-abhishek-docker-agent:v1'
+	image 'centos:8'
 	 args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
 	 
 	}
@@ -10,6 +10,15 @@ docker
 	
 	stages
 	{
+stage('Installing'){
+
+ dnf update -y
+ dnf upgrade -y
+ dnf install java-11-openjdk-devel -y
+ dnf install maven -y
+
+}
+
 	    stage('Build and test'){
 	  
 	          steps {
