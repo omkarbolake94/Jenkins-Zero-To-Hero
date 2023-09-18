@@ -12,10 +12,11 @@ docker
 	{
 stage('Installing'){
 
- dnf update -y
- dnf upgrade -y
- dnf install java-11-openjdk-devel -y
- dnf install maven -y
+steps{
+ sh 'dnf update -y'
+ sh 'dnf install java-11-openjdk-devel -y'
+ sh 'dnf install maven -y'
+}
 
 }
 
