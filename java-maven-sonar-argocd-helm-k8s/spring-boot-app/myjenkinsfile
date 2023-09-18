@@ -16,6 +16,7 @@ steps{
  sh 'dnf update -y'
  sh 'dnf install java-11-openjdk-devel -y'
  sh 'dnf install maven -y'
+ sh 'dnf install git -y'
 }
 
 }
