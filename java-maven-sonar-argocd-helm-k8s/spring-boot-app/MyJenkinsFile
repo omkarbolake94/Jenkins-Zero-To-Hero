@@ -1,9 +1,9 @@
 pipeline {
 agent { dockerfile true }
 stages {
-stage('JAVA') {
+stage('Build') {
 steps {
-sh 'java --version'
+sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean install '
 
 }
 }
