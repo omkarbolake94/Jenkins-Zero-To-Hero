@@ -2,7 +2,7 @@ pipeline  {
 agent { dockerfile true }
 
 stages {
-stage(Sonar Scanning){
+stage('Sonar Scanning'){
 withSonarQubeEnv(credentialsId: 'Sonarqube') {
     sh 'mvn clean package sonar:sonar'
 }
