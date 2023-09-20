@@ -23,6 +23,7 @@ steps{
 stage('Build Docker Image'){
 steps{
 script{
+args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
 sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t target/spring-boot-web.jar'
 }
 
