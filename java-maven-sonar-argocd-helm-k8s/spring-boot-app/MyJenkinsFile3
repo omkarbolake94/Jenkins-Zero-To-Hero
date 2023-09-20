@@ -17,5 +17,14 @@ steps{
 }
 }
 
+stage('Build Docker Image'){
+steps{
+script{
+sh 'cd cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t target/spring-boot-web.jar'
+}
+
+}
+}
+
 }
 }
