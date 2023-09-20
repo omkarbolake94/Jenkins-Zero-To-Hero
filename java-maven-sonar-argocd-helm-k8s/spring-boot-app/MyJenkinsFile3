@@ -3,8 +3,10 @@ agent { dockerfile true }
 
 stages {
 stage('Sonar Scanning'){
+steps{
 withSonarQubeEnv(credentialsId: 'Sonarqube') {
     sh 'mvn clean package sonar:sonar'
+}
 }
 }
 stage ('Build') {
