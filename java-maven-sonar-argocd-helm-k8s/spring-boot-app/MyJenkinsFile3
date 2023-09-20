@@ -10,7 +10,7 @@ sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean install'
 }
 stage('Sonar Scanning'){
 steps{
-withSonarQubeEnv(credentialsId: 'Sonarqube') {
+withSonarQubeEnv(credentialsId: 'sonar') {
     sh 'mvn clean package sonar:sonar'
 }
 }
