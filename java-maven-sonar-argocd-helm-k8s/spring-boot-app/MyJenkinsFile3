@@ -9,7 +9,7 @@ stages {
 stage ('Build') {
 steps {
 sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean install'
-sh 'sudo systemctl start docker'
+
 }
 }
 stage('Sonar Scanning'){
